@@ -40,9 +40,9 @@ export default function Navbar(props) {
           <button className="btn btn-outline-success" type="submit">Search</button>
         </form> */}
         <div className="btn-group mx-3" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-danger" onClick={props.mode==='dark'&&renderColor1}></button>
-            <button type="button" className="btn btn-warning" onClick={props.mode==='dark'&&renderColor2}></button>
-            <button type="button" className="btn btn-success" onClick={props.mode==='dark'&&renderColor3}></button>
+          <button type="button" className="btn btn-danger" onClick={props.mode==='dark'&&renderColor1}></button>
+          <button type="button" className="btn btn-warning" onClick={props.mode==='dark'&&renderColor2}></button>
+          <button type="button" className="btn btn-success" onClick={props.mode==='dark'&&renderColor3}></button>
         </div>
         <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
