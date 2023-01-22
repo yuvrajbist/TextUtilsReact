@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 
 
 export default function TextForm(props) {
+
+    const [text,setText] = useState('');
+
     const handleUpClick = ()=>{
         console.log("Uppercase was clicked")
         let newText=text.toUpperCase();
@@ -19,11 +22,7 @@ export default function TextForm(props) {
     const handleSpace = () => {
         console.log("Space was clicked")
         let newText='';
-        for(let i=0;i<text.length;i++){
-            if(text[i]!==' '){
-                newText+=text[i];
-            }
-        }
+        newText = text.split(' ').join('')
         setText(newText)
         props.showAlert('Removed Spaces', 'success')
     }
@@ -32,8 +31,10 @@ export default function TextForm(props) {
         console.log("on change")
         setText(event.target.value)
     }
-
-    const [text,setText] = useState('');
+    
+    const textLength = (value) => {
+        return value!==''
+    }
 
     return (
         <>
@@ -48,8 +49,8 @@ export default function TextForm(props) {
         </div>
         <div className="container my-3" style={{color: props.mode==='light'?'#042743':'white'}}>
             <h1>Text Summary</h1>
-            <p>{text.split(' ').length} words and {text.length} characters</p>
-            <p>{0.008 * text.split(' ').length} minutes read</p>
+            <p>{text.split(' ').filter(textLength).length} words and {text.length} characters</p>
+            <p>{0.008 * text.split(' ').filter(textLength).length} minutes read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:'Enter Text to Preview'}</p>
         </div>
