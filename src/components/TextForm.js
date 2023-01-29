@@ -43,9 +43,9 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleUpChange} id="exampleFormControlTextarea1" rows="8" style={{backgroundColor: props.mode==='light'?'white':'gray',color: props.mode==='light'?'#042743':'white'}}></textarea>
             </div>
-            <button className={`btn btn-${props.color}`} onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className={`btn btn-${props.color} mx-2`} onClick={handleLowClick}>Convert to Lowercase</button>
-            <button className={`btn btn-${props.color}`} onClick={handleSpace}>Remove Space</button>
+            <button className={`btn btn-${props.color} my-2`} onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleLowClick}>Convert to Lowercase</button>
+            <button className={`btn btn-${props.color} my-2`} onClick={handleSpace}>Remove Space</button>
         </div>
         <div className="container my-3" style={{color: props.mode==='light'?'#042743':'white'}}>
             <h1>Text Summary</h1>

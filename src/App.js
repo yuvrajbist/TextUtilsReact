@@ -54,7 +54,7 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route path="/about" element={<About />}>
+            <Route path="/about" element={<About color={color} mode={mode}/>}>
             </Route>
             <Route path="/" element={<TextForm heading="Enter text to analyze" aboutText='About' mode={mode} showAlert={showAlert} color={color} />}>
             </Route>
